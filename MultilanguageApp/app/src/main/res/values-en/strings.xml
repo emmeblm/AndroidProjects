@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_name">Multilanguage App</string>
+    <string name="name_btn1">This is the first button English</string>
+    <string name="name_btn2">This is the second button English</string>
+
+</resources>

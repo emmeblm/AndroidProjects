@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">App Multilenguaje</string>
+    <string name="action_settings">Settings</string>
+    <string name="name_btn1">Este es el botón uno Español</string>
+    <string name="name_btn2">Este es el botón dos Español</string>
+</resources>

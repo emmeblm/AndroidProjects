@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">array</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+<string-array name="color">
+    <item>blanco</item>
+    <item>verde</item>
+    <item>azul</item>
+    <item>amarillo</item>
+</string-array>
+    
+</resources>

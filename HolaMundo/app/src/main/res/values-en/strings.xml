@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">HelloWorld</string>
+    <string name="cambio_cuarto_activity">Change Fourth Activity</string>
+    <string name="cambio_segundo_activity">Change Second Activity</string>
+    <string name="cambio_tercer_activity">Change Third Activity</string>
+    <string name="cuarto_activity">Fourth Activity</string>
+    <string name="segundo_activity">Second Activity</string>
+    <string name="tercer_activity">Third Activity</string>
+    <string name="title_activity_cuarto">FourthActivity</string>
+    <string name="title_activity_segundo">SecondActivity</string>
+    <string name="title_activity_tercer">ThirdActivity</string>
+
+</resources>

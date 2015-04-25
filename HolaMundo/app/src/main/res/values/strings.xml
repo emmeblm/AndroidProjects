@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">HolaMundo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_segundo">SegundoActivity</string>
+    <string name="title_activity_tercer">TercerActivity</string>
+    <string name="title_activity_cuarto">CuartoActivity</string>
+    <string name="cambio_segundo_activity">Cambio Segundo Activity</string>
+    <string name="cambio_tercer_activity">Cambio Tercer Activity</string>
+    <string name="cambio_cuarto_activity">Cambio Cuarto Activity</string>
+    <string name="cuarto_activity">Cuarto Activity</string>
+    <string name="segundo_activity">Segundo Activity</string>
+    <string name="tercer_activity">Tercer Activity</string>
+</resources>
