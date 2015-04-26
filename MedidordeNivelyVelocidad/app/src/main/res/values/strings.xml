@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Medidor de Nivel y Velocidad</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_medidor_nivel">MedidorNivel</string>
+    <string name="title_activity_medidor_velocidad">MedidorVelocidad</string>
+</resources>
