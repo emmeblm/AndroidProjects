@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 
 public class MedidorNivel extends Activity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -13,6 +14,6 @@ public class MedidorNivel extends Activity {
     }
 
     private void initializeChart() {
-
+        //chartLevelMeasurement = new SensorReadingChartXYPlotImpl(findViewById(R.id.chartLevel));
     }
 }

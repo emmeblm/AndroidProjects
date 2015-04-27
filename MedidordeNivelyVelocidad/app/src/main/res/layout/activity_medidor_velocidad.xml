@@ -13,9 +13,20 @@
         android:layout_width="wrap_content"
         android:layout_height="265dp"
         class="com.androidplot.xy.XYPlot"
-        android:id="@+id/charSpeed"
+        android:id="@+id/chartSpeed"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_weight="0.06" />
+        android:layout_weight="0.06"
+        android:visibility="visible" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add sensor lecture"
+        android:id="@+id/btnAddSensorLecture"
+        android:layout_weight="0.06"
+        android:textColor="@android:color/black"
+        android:clickable="true"
+        android:onClick="onClickAddSensorLecture" />
 </LinearLayout>

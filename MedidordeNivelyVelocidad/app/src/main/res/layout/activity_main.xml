@@ -7,4 +7,12 @@
     android:orientation="vertical"
     android:background="@android:color/background_light">
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/btnSpeedChart"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true"
+        android:onClick="onClickStartActivitySpeedometer" />
 </LinearLayout>
