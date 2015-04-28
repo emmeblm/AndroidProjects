@@ -26,7 +26,7 @@ public class DataSerie {
         serie.add(new Float(sensorLecture));
     }
 
-    public void initializeSerie() {
+    public void initializeSerieWithRandomData() {
         Random random = new Random();
         for(int i = 0; i < 10; i++) {
             serie.add(new Float(random.nextFloat()));

@@ -25,8 +25,7 @@ public class MedidorVelocidad extends Activity {
 
     private void initializeChart() {
         speedSerie = initializeSpeedSerie();
-        speedSerie.initializeSerie();
-
+        speedSerie.initializeSerieWithRandomData();
         updateChart();
     }
 
@@ -41,8 +40,8 @@ public class MedidorVelocidad extends Activity {
 
     private void updateChart() {
         speedChartView = (XYPlot) findViewById(R.id.chartSpeed);
-        speedChartSerie = new SimpleXYSeries(speedSerie.getSerie(), speedSerie.getFormat(), speedSerie.getName());
         speedChartView.getSeriesSet().clear();
+        speedChartSerie = new SimpleXYSeries(speedSerie.getSerie(), speedSerie.getFormat(), speedSerie.getName());
         speedChartView.addSeries(speedChartSerie, speedSerie.getLineAndPointFormatter());
         speedChartView.redraw();
     }
