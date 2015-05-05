@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/libs/internal_impl-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
+        <dex dex="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/pre-dexed/debug/internal_impl-22.1.1-9890cc574d6ee9686610725b2fa160d8f5860800.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.1.1/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a3ff3c506644c820eb2bdf06e8339f72be578551">
+        <dex dex="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/pre-dexed/debug/classes-e755502ac38b77d0c87afffca894ae2e7ce6e817.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.1.1/support-annotations-22.1.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="01d051a6bfb1218b1db2d3a5af0480ac2c25c42a">
+        <dex dex="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/pre-dexed/debug/support-annotations-22.1.1-a4cf63efdafb84a035d4fbd93e2c3c036783ef76.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.1.1/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="/Users/lemme/AndroidStudioProjects/ArrayAdapterListas/app/build/intermediates/pre-dexed/debug/classes-169d6fd2699a942a2495d6f954793a8368455c09.jar" />
+    </item>
+
+</items>

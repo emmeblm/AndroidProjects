@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/pre-dexed/debug/classes-af30eb41d2400fec87ca3b34c339271abd417d91.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-58dac2135c0e97c8f466c7813633c88225d068fe.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/pre-dexed/debug/classes-2127aa8a6c06187c1d30656f297d767cfd66cfc8.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/lemme/AndroidStudioProjects/HolaMundo/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-fa8312c0edf238189b3863c7361d8af61bb3372f.jar" />
+    </item>
+
+</items>

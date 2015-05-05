@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/pre-dexed/debug/classes-27a6a0b77f775ff7d82b917bf3a0a25b468fd31a.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/pre-dexed/debug/classes-1e794a2dd83b5aee890e5a0f11ba15a7b594c0d6.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-c3f78c2ff508b675977de7cadd812cdd97d4b503.jar" />
+    </item>
+    <item
+        jar="/Users/lemme/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/Users/lemme/AndroidStudioProjects/Layouts/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-fa8312c0edf238189b3863c7361d8af61bb3372f.jar" />
+    </item>
+
+</items>
