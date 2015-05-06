@@ -1,6 +1,7 @@
 package com.example.lemme.arrayadapteritemsdinamicos;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,32 +13,24 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
     private ListView contactList;
+    private ArrayList<Contact> contactArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initializeContactList();
+        setItemListenerToContactList();
     }
 
     private void initializeContactList() {
-
         contactList = (ListView) findViewById(R.id.contactList);
-        final ArrayList<Contact> contactArrayList = createListOfContacts();
+        contactArrayList = createListOfContacts();
         CustomArrayAdapter customAdapter = new CustomArrayAdapter(this, contactArrayList);
         contactList.setAdapter(customAdapter);
-
-
-        contactList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast toast = Toast.makeText(getApplicationContext(), contactArrayList.get(position).getName(), Toast.LENGTH_SHORT);
-                toast.show();
-            }
-        });
     }
 
     private ArrayList<Contact> createListOfContacts() {
@@ -63,6 +56,18 @@ public class MainActivity extends ActionBarActivity {
                 contact3Code));
 
         return contactArrayList;
+    }
+
+    private void setItemListenerToContactList() {
+        contactList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Contact contact = contactArrayList.get(position);
+                Intent intentProfile = new Intent(getApplicationContext(), ProfileActivity.class);
+                intentProfile.putExtra("Contact", contact);
+                startActivity(intentProfile);
+            }
+        });
     }
 
     @Override

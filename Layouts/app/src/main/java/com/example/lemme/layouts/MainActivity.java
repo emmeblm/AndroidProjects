@@ -43,6 +43,7 @@ public class MainActivity extends Activity {
     public void onClickLogIn(View view) {
         EditText txtUsername = (EditText) findViewById(R.id.username);
         String username = txtUsername.getText().toString();
+
         Intent intentProfile = new Intent(this, Perfil.class);
         intentProfile.putExtra("Name", username);
 

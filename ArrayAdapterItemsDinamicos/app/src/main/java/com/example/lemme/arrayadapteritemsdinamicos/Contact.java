@@ -1,11 +1,13 @@
 package com.example.lemme.arrayadapteritemsdinamicos;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by lemme on 5/5/15.
  */
-public class Contact {
+public class Contact implements Parcelable {
     private int photo;
-
     private String name;
     private String phone;
     private String address;
@@ -17,6 +19,24 @@ public class Contact {
         this.phone = phone;
         this.address = address;
         this.code = code;
+    }
+
+    public Contact(Parcel parcel) {
+        readFromParcel(parcel);
+    }
+
+    private void readFromParcel(Parcel parcel) {
+        int[] intTemp = new int[2];
+        String[] stringTemp = new String[3];
+
+        parcel.readIntArray(intTemp);
+        parcel.readStringArray(stringTemp);
+
+        photo = intTemp[0];
+        code = intTemp[1];
+        name = stringTemp[0];
+        phone = stringTemp[1];
+        address = stringTemp[2];
     }
 
     public int getPhoto() {
@@ -38,4 +58,26 @@ public class Contact {
     public int getCode() {
         return code;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+        parcel.writeIntArray(new int[] {photo, code});
+        parcel.writeStringArray(new String[] {name, phone, address});
+    }
+
+    public static final Parcelable.Creator<Contact> CREATOR
+            = new Parcelable.Creator<Contact>() {
+        public Contact createFromParcel(Parcel in) {
+            return new Contact(in);
+        }
+
+        public Contact[] newArray(int size) {
+            return new Contact[size];
+        }
+    };
 }

@@ -10,6 +10,10 @@
     <string name="contact_2_phone">0998201148</string>
     <string name="contact_2_address">Buenos Aires</string>
     <string name="contact_3_name">Edison Ayala</string>
-    <string name="contact_3_phone">0988514083</string>
+    <string name="contact_3_phone">0982534986</string>
     <string name="contact_3_address">Guayaquil</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="name_title">Name:</string>
+    <string name="phone_title">Phone:</string>
+    <string name="address_title">Address:</string>
 </resources>

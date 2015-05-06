@@ -1447,6 +1447,11 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f080041;
         public static final int disabled_alpha_material_dark=0x7f080042;
         public static final int disabled_alpha_material_light=0x7f080043;
+        public static final int layout_height=0x7f080044;
+        public static final int layout_margin_top_bottom=0x7f080045;
+        public static final int margin_right_title=0x7f080046;
+        public static final int profile_photo_dimension=0x7f080047;
+        public static final int row_photo_dimensions=0x7f080048;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_mtrl_alpha=0x7f020000;
@@ -1526,20 +1531,23 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_settings=0x7f090055;
+        public static final int action_settings=0x7f09005d;
         public static final int activity_chooser_view_content=0x7f090026;
+        public static final int address=0x7f090057;
+        public static final int addressTitle=0x7f090056;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090016;
         public static final int beginning=0x7f090013;
         public static final int buttonPanel=0x7f090036;
         public static final int checkbox=0x7f090038;
+        public static final int code=0x7f090051;
         public static final int collapseActionView=0x7f090017;
-        public static final int contactAddress=0x7f090054;
-        public static final int contactCode=0x7f090053;
+        public static final int contactAddress=0x7f09005c;
+        public static final int contactCode=0x7f09005b;
         public static final int contactList=0x7f09004f;
-        public static final int contactName=0x7f090051;
-        public static final int contactPhone=0x7f090052;
-        public static final int contactPhoto=0x7f090050;
+        public static final int contactName=0x7f090059;
+        public static final int contactPhone=0x7f09005a;
+        public static final int contactPhoto=0x7f090058;
         public static final int contentPanel=0x7f090031;
         public static final int custom=0x7f090035;
         public static final int customPanel=0x7f090034;
@@ -1561,10 +1569,15 @@ containing a value of this type.
         public static final int list_item=0x7f09002a;
         public static final int middle=0x7f090015;
         public static final int multiply=0x7f09001e;
+        public static final int name=0x7f090053;
+        public static final int nameTitle=0x7f090052;
         public static final int never=0x7f090019;
         public static final int none=0x7f09000e;
         public static final int normal=0x7f09000a;
         public static final int parentPanel=0x7f09002d;
+        public static final int phone=0x7f090055;
+        public static final int phoneTitle=0x7f090054;
+        public static final int photo=0x7f090050;
         public static final int progress_circular=0x7f090005;
         public static final int progress_horizontal=0x7f090006;
         public static final int radio=0x7f09003a;
@@ -1632,14 +1645,16 @@ containing a value of this type.
         public static final int abc_select_dialog_material=0x7f040017;
         public static final int abc_simple_dropdown_hint=0x7f040018;
         public static final int activity_main=0x7f040019;
-        public static final int rowlist=0x7f04001a;
-        public static final int select_dialog_item_material=0x7f04001b;
-        public static final int select_dialog_multichoice_material=0x7f04001c;
-        public static final int select_dialog_singlechoice_material=0x7f04001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f04001e;
+        public static final int activity_profile=0x7f04001a;
+        public static final int rowlist=0x7f04001b;
+        public static final int select_dialog_item_material=0x7f04001c;
+        public static final int select_dialog_multichoice_material=0x7f04001d;
+        public static final int select_dialog_singlechoice_material=0x7f04001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f04001f;
     }
     public static final class menu {
         public static final int menu_main=0x7f0d0000;
+        public static final int menu_profile=0x7f0d0001;
     }
     public static final class mipmap {
         public static final int ic_launcher=0x7f030000;
@@ -1663,17 +1678,21 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0b000f;
         public static final int abc_toolbar_collapse_description=0x7f0b0010;
         public static final int action_settings=0x7f0b0011;
-        public static final int app_name=0x7f0b0012;
-        public static final int contact_1_address=0x7f0b0013;
-        public static final int contact_1_name=0x7f0b0014;
-        public static final int contact_1_phone=0x7f0b0015;
-        public static final int contact_2_address=0x7f0b0016;
-        public static final int contact_2_name=0x7f0b0017;
-        public static final int contact_2_phone=0x7f0b0018;
-        public static final int contact_3_address=0x7f0b0019;
-        public static final int contact_3_name=0x7f0b001a;
-        public static final int contact_3_phone=0x7f0b001b;
-        public static final int hello_world=0x7f0b001c;
+        public static final int address_title=0x7f0b0012;
+        public static final int app_name=0x7f0b0013;
+        public static final int contact_1_address=0x7f0b0014;
+        public static final int contact_1_name=0x7f0b0015;
+        public static final int contact_1_phone=0x7f0b0016;
+        public static final int contact_2_address=0x7f0b0017;
+        public static final int contact_2_name=0x7f0b0018;
+        public static final int contact_2_phone=0x7f0b0019;
+        public static final int contact_3_address=0x7f0b001a;
+        public static final int contact_3_name=0x7f0b001b;
+        public static final int contact_3_phone=0x7f0b001c;
+        public static final int hello_world=0x7f0b001d;
+        public static final int name_title=0x7f0b001e;
+        public static final int phone_title=0x7f0b001f;
+        public static final int title_activity_profile=0x7f0b0020;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0c0000;
