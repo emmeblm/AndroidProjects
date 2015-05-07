@@ -42,6 +42,7 @@ public class MainActivity extends Activity {
     }
 
     public void onClickStartActivitySpeedometer(View view) {
+        createDataStreamToTalkToTheServer();
         Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
         startActivity(intentProfile);
     }
@@ -60,7 +61,6 @@ public class MainActivity extends Activity {
         tryToCreateBluetoothSocket(bluetoothDevice);
         bluetoothAdapter.cancelDiscovery();
         establishConnectionWithTheBluetoothModule();
-        createDataStreamToTalkToTheServer();
     }
 
     public void onClickDisconnectFromBluetoothModule(View view) {
@@ -125,7 +125,4 @@ public class MainActivity extends Activity {
         ConnectedThread connectedThread = new ConnectedThread(bluetoothSocket);
         connectedThread.start();
     }
-
-
-
 }
