@@ -7,14 +7,6 @@
 
 package com.example.bluetooth2;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.lang.reflect.Method;
-import java.util.UUID;
- 
-import com.example.bluetooth2.R;
- 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,6 +21,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.lang.reflect.Method;
+import java.util.UUID;
  
 public class MainActivity extends Activity {
   private static final String TAG = "bluetooth2";
@@ -48,7 +46,7 @@ public class MainActivity extends Activity {
   private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
  
   // MAC-address of Bluetooth module (you must edit this line)
-  private static String address = "00:26:7E:88:E6:A5";
+  private static String address = "30:15:01:13:15:03";
    
   /** Called when the activity is first created. */
   @Override
@@ -197,6 +195,9 @@ public class MainActivity extends Activity {
     Toast.makeText(getBaseContext(), title + " - " + message, Toast.LENGTH_LONG).show();
     finish();
   }
+
+
+
  
   private class ConnectedThread extends Thread {
 	    private final InputStream mmInStream;
