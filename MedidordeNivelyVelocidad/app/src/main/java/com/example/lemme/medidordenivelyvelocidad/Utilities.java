@@ -25,6 +25,7 @@ public abstract class Utilities {
     public static final String UNABLE_TO_CLOSE_SOCKET = "Unable to close socket during connection failure";
     public static final String ERROR_SENDING_DATA = "Error sending data";
     public static final int MAXIMUM_LENGHT_DATA_SERIE_DISPLAYED = 10;
+    public static final int ENABLE_BLUETOOTH_REQUEST = 1;
 
     public static BluetoothSocket bluetoothSocket;
 }

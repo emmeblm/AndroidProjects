@@ -33,75 +33,58 @@ public class MainActivity extends Activity {
         setEnabledStateToButtons(true, false, false);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
     private void setEnabledStateToButtons(Boolean enableConnect, Boolean enableDisconnect, Boolean enableCharts) {
         connectBluetooth.setEnabled(enableConnect);
         disconnectBluetooth.setEnabled(enableDisconnect);
         goToSpeedChart.setEnabled(enableCharts);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    private void disconnectFromBluetoothModule() {
-        if(Utilities.bluetoothSocket != null) {
-            try {
-                Utilities.bluetoothSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     public void onClickConnectToBluetoothDevice(View view) {
         BluetoothAdapterHandler.setDefaultBluetoothAdapter();
         Boolean bluetoothAdapterSupported = BluetoothAdapterHandler.validateIfBluetoothAdapterIsSupported();
 
+        Boolean bluetoothAdapterEnabled = false;
         if(bluetoothAdapterSupported)
-            checkBluetoothAdapterState();
+            bluetoothAdapterEnabled = checkBluetoothAdapterState();
         else
             exitAppWithError(Utilities.FATAL_ERROR, Utilities.BLUETOOTH_NOT_SUPPORTED);
 
+        if(bluetoothAdapterEnabled)
+            continueConnecting();
+    }
+
+    private Boolean checkBluetoothAdapterState() {
+        Boolean bluetoothAdapterEnabled = BluetoothAdapterHandler.validateBluetoothAdapterState();
+        if(!bluetoothAdapterEnabled)
+            promptUserToEnableBluetooth();
+        return bluetoothAdapterEnabled;
+    }
+
+    private void promptUserToEnableBluetooth() {
+        Intent bluetoothEnableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+        this.startActivityForResult(bluetoothEnableIntent, Utilities.ENABLE_BLUETOOTH_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == Utilities.ENABLE_BLUETOOTH_REQUEST && resultCode == RESULT_OK) {
+            if(checkBluetoothAdapterState())
+                continueConnecting();
+        }
+    }
+
+    private void exitAppWithError(String errorType, String errorMessage) {
+        String messageToShow = errorType + Utilities.ERROR_MESSAGE_JOIN_CHAR + errorMessage;
+        Toast.makeText(getBaseContext(), messageToShow, Toast.LENGTH_SHORT);
+    }
+
+    private void continueConnecting() {
         BluetoothAdapter bluetoothAdapter = BluetoothAdapterHandler.getBluetoothAdapter();
         BluetoothDevice bluetoothDevice = bluetoothAdapter.getRemoteDevice(Utilities.BLUETOOTH_MODULE_MAC_ADDRESS);
         tryToCreateBluetoothSocket(bluetoothDevice);
         bluetoothAdapter.cancelDiscovery();
         establishConnectionWithTheBluetoothModule();
         setEnabledStateToButtons(false, true, true);
-
-    }
-
-    public void onClickDisconnectFromBluetoothModule(View view) {
-        disconnectFromBluetoothModule();
-        setEnabledStateToButtons(true, false, false);
-    }
-
-    public void onClickStartActivitySpeedometer(View view) {
-        Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
-        startActivity(intentProfile);
-        setEnabledStateToButtons(false, true, true);
-    }
-
-    private void checkBluetoothAdapterState() {
-        Boolean bluetoothAdapterEnabled = BluetoothAdapterHandler.validateBluetoothAdapterState();
-        if(!bluetoothAdapterEnabled)
-            promptUserToEnableBluetooth();
-    }
-
-    private void promptUserToEnableBluetooth() {
-        Intent bluetoothEnableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-        startActivityForResult(bluetoothEnableIntent, 1);
-    }
-
-    private void exitAppWithError(String errorType, String errorMessage) {
-        String messageToShow = errorType + Utilities.ERROR_MESSAGE_JOIN_CHAR + errorMessage;
-        Toast.makeText(getBaseContext(), messageToShow, Toast.LENGTH_SHORT);
     }
 
     private void tryToCreateBluetoothSocket(BluetoothDevice bluetoothDevice) {
@@ -140,5 +123,26 @@ public class MainActivity extends Activity {
                 exitAppWithError(Utilities.FATAL_ERROR, Utilities.UNABLE_TO_CLOSE_SOCKET);
             }
         }
+    }
+
+    public void onClickDisconnectFromBluetoothModule(View view) {
+        disconnectFromBluetoothModule();
+        setEnabledStateToButtons(true, false, false);
+    }
+
+    private void disconnectFromBluetoothModule() {
+        if(Utilities.bluetoothSocket != null) {
+            try {
+                Utilities.bluetoothSocket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void onClickStartActivitySpeedometer(View view) {
+        Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
+        startActivity(intentProfile);
+        setEnabledStateToButtons(false, true, true);
     }
 }

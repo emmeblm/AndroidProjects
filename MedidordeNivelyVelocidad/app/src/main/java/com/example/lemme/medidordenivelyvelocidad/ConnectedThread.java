@@ -1,5 +1,6 @@
 package com.example.lemme.medidordenivelyvelocidad;
 
+import android.app.Activity;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
@@ -17,15 +18,19 @@ import java.io.OutputStream;
  */
 public class ConnectedThread extends Thread {
     private final BluetoothSocket bluetoothSocket;
-    private final InputStream readerStream;
-    private final OutputStream writerStream;
-    private static Handler handler;
-    private volatile boolean running = true;
+    private Chart chart;
     private StringBuffer stringBuffer;
 
-    public ConnectedThread(final BluetoothSocket bluetoothSocket) {
-        stringBuffer = new StringBuffer();
+    private final InputStream readerStream;
+    private final OutputStream writerStream;
+
+    private static Handler handler;
+    private volatile boolean running = true;
+
+    public ConnectedThread(final BluetoothSocket bluetoothSocket, final Chart chart) {
         this.bluetoothSocket = bluetoothSocket;
+        this.chart = chart;
+        stringBuffer = new StringBuffer();
         InputStream reader = null;
         OutputStream writer = null;
         try {
@@ -37,6 +42,10 @@ public class ConnectedThread extends Thread {
         readerStream = reader;
         writerStream = writer;
 
+        initializeHandler();
+    }
+
+    private void initializeHandler() {
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -49,6 +58,8 @@ public class ConnectedThread extends Thread {
                             String subString = stringBuffer.substring(0, endOfLine);
                             stringBuffer.delete(0, stringBuffer.length());
                             Log.d(Utilities.TAG, subString);
+                            chart.getSerie().addSensorLecture(Float.valueOf(subString));
+                            chart.updateChart();
                         }
                         break;
                     default:

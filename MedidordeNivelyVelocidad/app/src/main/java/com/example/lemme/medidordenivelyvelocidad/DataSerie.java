@@ -36,14 +36,6 @@ public class DataSerie {
         serieHistory.add(serie.get(serie.size() - 1));
     }
 
-    public void initializeSerieWithRandomData() {
-        Random random = new Random();
-        for(int i = 0; i < 10; i++) {
-            serie.add(new Float(random.nextFloat()));
-        }
-        serieHistory.addAll(serie);
-    }
-
     public SimpleXYSeries.ArrayFormat getFormat() {
         return format;
     }
