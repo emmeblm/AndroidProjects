@@ -16,7 +16,7 @@ import com.androidplot.xy.XYPlot;
 import java.util.HashMap;
 import java.util.Random;
 
-public class MedidorVelocidadActivity extends Activity {
+public class SpeedometerActivity extends Activity {
 
     Chart speedChart;
     private ConnectedThread connectedThread;
@@ -26,12 +26,17 @@ public class MedidorVelocidadActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medidor_velocidad);
         initializeChart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
         createDataStreamToTalkToTheServer();
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         if(connectedThread != null)
             connectedThread.terminate();
     }

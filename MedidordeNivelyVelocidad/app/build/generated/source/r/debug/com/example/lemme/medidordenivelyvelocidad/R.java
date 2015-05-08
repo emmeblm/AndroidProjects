@@ -42,9 +42,10 @@ public final class R {
         public static final int connect_to_bluetooth_module=0x7f050002;
         public static final int disconnect_from_bluetooth_module=0x7f050003;
         public static final int go_to_speedometer=0x7f050004;
-        public static final int speed_serie_name=0x7f050005;
-        public static final int title_activity_medidor_nivel=0x7f050006;
-        public static final int title_activity_medidor_velocidad=0x7f050007;
+        public static final int hello_blank_fragment=0x7f050005;
+        public static final int speed_serie_name=0x7f050006;
+        public static final int title_activity_medidor_nivel=0x7f050007;
+        public static final int title_activity_medidor_velocidad=0x7f050008;
     }
     public static final class style {
         /**  Customize your theme here. 

@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
-public class MedidorNivelActivity extends Activity {
+public class LevelMeterActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

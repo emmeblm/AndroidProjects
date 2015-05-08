@@ -26,11 +26,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.lemme.medidordenivelyvelocidad.MedidorNivelActivity"
+            android:name="com.example.lemme.medidordenivelyvelocidad.LevelMeterActivity"
             android:label="@string/title_activity_medidor_nivel" >
         </activity>
         <activity
-            android:name="com.example.lemme.medidordenivelyvelocidad.MedidorVelocidadActivity"
+            android:name="com.example.lemme.medidordenivelyvelocidad.SpeedometerActivity"
             android:label="@string/title_activity_medidor_velocidad" >
         </activity>
     </application>

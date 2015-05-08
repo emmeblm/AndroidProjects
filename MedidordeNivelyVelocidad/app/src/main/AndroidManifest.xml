@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MedidorNivelActivity"
+            android:name=".LevelMeterActivity"
             android:label="@string/title_activity_medidor_nivel" >
         </activity>
         <activity
-            android:name=".MedidorVelocidadActivity"
+            android:name=".SpeedometerActivity"
             android:label="@string/title_activity_medidor_velocidad" >
         </activity>
     </application>

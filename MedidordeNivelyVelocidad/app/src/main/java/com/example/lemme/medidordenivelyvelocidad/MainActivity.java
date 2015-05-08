@@ -4,13 +4,18 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.UUID;
@@ -18,9 +23,10 @@ import java.util.UUID;
 
 public class MainActivity extends Activity {
 
-    Button connectBluetooth;
-    Button disconnectBluetooth;
-    Button goToSpeedChart;
+    private Button connectBluetooth;
+    private Button disconnectBluetooth;
+    private Button goToSpeedChart;
+    private BroadcastReceiver broadcastReceiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,15 @@ public class MainActivity extends Activity {
         setEnabledStateToButtons(true, false, false);
     }
 
-    private void setEnabledStateToButtons(Boolean enableConnect, Boolean enableDisconnect, Boolean enableCharts) {
-        connectBluetooth.setEnabled(enableConnect);
-        disconnectBluetooth.setEnabled(enableDisconnect);
-        goToSpeedChart.setEnabled(enableCharts);
+    private void setEnabledStateToButtons(Boolean ... enableButtons) {
+        connectBluetooth.setEnabled(enableButtons[0]);
+        disconnectBluetooth.setEnabled(enableButtons[1]);
+        goToSpeedChart.setEnabled(enableButtons[2]);
     }
 
     public void onClickConnectToBluetoothDevice(View view) {
+        setEnabledStateToButtons(false, false, false);
+
         BluetoothAdapterHandler.setDefaultBluetoothAdapter();
         Boolean bluetoothAdapterSupported = BluetoothAdapterHandler.validateIfBluetoothAdapterIsSupported();
 
@@ -71,6 +79,8 @@ public class MainActivity extends Activity {
             if(checkBluetoothAdapterState())
                 continueConnecting();
         }
+        if(resultCode == RESULT_CANCELED)
+            setEnabledStateToButtons(true, false, false);
     }
 
     private void exitAppWithError(String errorType, String errorMessage) {
@@ -79,12 +89,33 @@ public class MainActivity extends Activity {
     }
 
     private void continueConnecting() {
+        createBroadcastReceiverToListenToBluetoothAdapterState();
+        registerBroadcastReceiverToBluetoothEvents();
         BluetoothAdapter bluetoothAdapter = BluetoothAdapterHandler.getBluetoothAdapter();
         BluetoothDevice bluetoothDevice = bluetoothAdapter.getRemoteDevice(Utilities.BLUETOOTH_MODULE_MAC_ADDRESS);
         tryToCreateBluetoothSocket(bluetoothDevice);
         bluetoothAdapter.cancelDiscovery();
         establishConnectionWithTheBluetoothModule();
         setEnabledStateToButtons(false, true, true);
+    }
+
+    private void createBroadcastReceiverToListenToBluetoothAdapterState() {
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
+                Boolean bluetoothAdapterOFF = (state == BluetoothAdapter.STATE_OFF ||  state == BluetoothAdapter.STATE_TURNING_OFF);
+                if(action == BluetoothAdapter.ACTION_STATE_CHANGED && bluetoothAdapterOFF) {
+                    onClickDisconnectFromBluetoothModule(new View(getApplicationContext()));
+                }
+            }
+        };
+    }
+
+    private void registerBroadcastReceiverToBluetoothEvents() {
+        IntentFilter bluetoothStateChangedFilter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        this.registerReceiver(broadcastReceiver, bluetoothStateChangedFilter);
     }
 
     private void tryToCreateBluetoothSocket(BluetoothDevice bluetoothDevice) {
@@ -127,6 +158,11 @@ public class MainActivity extends Activity {
 
     public void onClickDisconnectFromBluetoothModule(View view) {
         disconnectFromBluetoothModule();
+        try {
+            this.unregisterReceiver(broadcastReceiver);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
         setEnabledStateToButtons(true, false, false);
     }
 
@@ -141,8 +177,14 @@ public class MainActivity extends Activity {
     }
 
     public void onClickStartActivitySpeedometer(View view) {
-        Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
+        Intent intentProfile = new Intent(this, SpeedometerActivity.class);
         startActivity(intentProfile);
         setEnabledStateToButtons(false, true, true);
+    }
+
+    @Override
+    public void onBackPressed() {
+        onClickDisconnectFromBluetoothModule(new View(this));
+        super.onBackPressed();
     }
 }

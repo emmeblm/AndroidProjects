@@ -105,13 +105,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MedidorVelocidadActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+      <file leaf-file-name="SpeedometerActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
               <folding>
-                <element signature="e#1637#1673#0" expanded="true" />
+                <element signature="e#1709#1745#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -120,10 +120,9 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41582915">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.39572865">
+              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#setEnabledStateToButtons#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onClickConnectToBluetoothDevice#0;class#MainActivity#0" expanded="false" />
@@ -132,6 +131,10 @@
                 <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#exitAppWithError#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#continueConnecting#0;class#MainActivity#0" expanded="false" />
+                <element signature="method#createBroadcastReceiverToListenToBluetoothAdapterState#0;class#MainActivity#0" expanded="false" />
+                <element signature="e#4018#4654#0" expanded="true" />
+                <element signature="e#4653#4654#0" expanded="true" />
+                <element signature="method#registerBroadcastReceiverToBluetoothEvents#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#tryToCreateBluetoothSocket#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#createBluetoothSocket#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#tryToCreateInsecureRfCommSocketToServiceRecord#0;class#MainActivity#0" expanded="false" />
@@ -139,28 +142,7 @@
                 <element signature="method#onClickDisconnectFromBluetoothModule#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#disconnectFromBluetoothModule#0;class#MainActivity#0" expanded="false" />
                 <element signature="method#onClickStartActivitySpeedometer#0;class#MainActivity#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BluetoothAdapterHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/BluetoothAdapterHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Chart.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/Chart.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-              <folding>
-                <element signature="e#1479#1480#0" expanded="true" />
+                <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1369,7 +1351,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorNivel.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorNivelActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidad.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
@@ -1377,11 +1358,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SensorLecture.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_medidor_velocidad.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/ConnectedThread.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/DataSerie.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/Chart.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/BluetoothAdapterHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/Utilities.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorNivelActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/LevelMeterActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MainActivity.java" />
       </list>
     </option>
@@ -1799,22 +1784,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="940" extended-state="1" />
+    <frame x="0" y="23" width="1680" height="940" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39927185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.502442" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.502442" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.497558" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288835" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24969475" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1846,17 +1831,36 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="13" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1883,56 +1887,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-          <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/DataSerie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1959,18 +1923,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="30" column="39" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2008,18 +1970,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2050,18 +2010,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2088,19 +2046,19 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorNivelActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/LevelMeterActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
+            <element signature="e#1709#1745#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2211,13 +2169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorNivelActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09422111">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13618676">
@@ -2256,25 +2207,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/ConnectedThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/DataSerie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82857144">
@@ -2283,34 +2215,6 @@
             <element signature="e#1079#1080#0" expanded="false" />
             <element signature="e#1140#1141#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/Chart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#1479#1480#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MedidorVelocidadActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
-          <folding>
-            <element signature="e#1637#1673#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/BluetoothAdapterHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2324,12 +2228,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/Chart.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6407035">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/BluetoothAdapterHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5276382">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/LevelMeterActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09422111">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/SpeedometerActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+          <folding>
+            <element signature="e#1709#1745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/ConnectedThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="48" selection-start-line="61" selection-start-column="48" selection-end-line="61" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/lemme/medidordenivelyvelocidad/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41582915">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.39572865">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#MainActivity#0" expanded="false" />
             <element signature="method#setEnabledStateToButtons#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClickConnectToBluetoothDevice#0;class#MainActivity#0" expanded="false" />
@@ -2338,6 +2294,10 @@
             <element signature="method#onActivityResult#0;class#MainActivity#0" expanded="false" />
             <element signature="method#exitAppWithError#0;class#MainActivity#0" expanded="false" />
             <element signature="method#continueConnecting#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#createBroadcastReceiverToListenToBluetoothAdapterState#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4018#4654#0" expanded="true" />
+            <element signature="e#4653#4654#0" expanded="true" />
+            <element signature="method#registerBroadcastReceiverToBluetoothEvents#0;class#MainActivity#0" expanded="false" />
             <element signature="method#tryToCreateBluetoothSocket#0;class#MainActivity#0" expanded="false" />
             <element signature="method#createBluetoothSocket#0;class#MainActivity#0" expanded="false" />
             <element signature="method#tryToCreateInsecureRfCommSocketToServiceRecord#0;class#MainActivity#0" expanded="false" />
@@ -2345,6 +2305,7 @@
             <element signature="method#onClickDisconnectFromBluetoothModule#0;class#MainActivity#0" expanded="false" />
             <element signature="method#disconnectFromBluetoothModule#0;class#MainActivity#0" expanded="false" />
             <element signature="method#onClickStartActivitySpeedometer#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onBackPressed#0;class#MainActivity#0" expanded="false" />
           </folding>
         </state>
       </provider>
