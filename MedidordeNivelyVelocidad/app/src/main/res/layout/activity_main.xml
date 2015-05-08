@@ -14,15 +14,17 @@
         android:text="@string/connect_to_bluetooth_module"
         android:id="@+id/btnConnectToBluetooth"
         android:clickable="true"
-        android:onClick="onClickConnectToBluetoothDevice" />
+        android:onClick="onClickConnectToBluetoothDevice"
+        android:enabled="true" />
 
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Desconectar del módulo bluetooth"
-        android:id="@+id/button"
+        android:id="@+id/btnDisconnectFromBluetooth"
         android:clickable="true"
-        android:onClick="onClickDisconnectFromBluetoothModule" />
+        android:onClick="onClickDisconnectFromBluetoothModule"
+        android:enabled="false" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -37,6 +39,7 @@
         android:id="@+id/btnSpeedChart"
         android:layout_gravity="center_horizontal"
         android:clickable="true"
-        android:onClick="onClickStartActivitySpeedometer" />
+        android:onClick="onClickStartActivitySpeedometer"
+        android:enabled="false" />
 
 </LinearLayout>

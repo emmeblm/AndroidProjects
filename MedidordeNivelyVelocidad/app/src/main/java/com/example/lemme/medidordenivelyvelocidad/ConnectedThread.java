@@ -1,9 +1,12 @@
 package com.example.lemme.medidordenivelyvelocidad;
 
 import android.bluetooth.BluetoothSocket;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,17 +16,21 @@ import java.io.OutputStream;
  * Created by lemme on 5/7/15.
  */
 public class ConnectedThread extends Thread {
+    private final BluetoothSocket bluetoothSocket;
     private final InputStream readerStream;
     private final OutputStream writerStream;
     private static Handler handler;
+    private volatile boolean running = true;
+    private StringBuffer stringBuffer;
 
-    public ConnectedThread(BluetoothSocket bluetoothSocket) {
+    public ConnectedThread(final BluetoothSocket bluetoothSocket) {
+        stringBuffer = new StringBuffer();
+        this.bluetoothSocket = bluetoothSocket;
         InputStream reader = null;
         OutputStream writer = null;
         try {
             reader = bluetoothSocket.getInputStream();
             writer = bluetoothSocket.getOutputStream();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -36,8 +43,13 @@ public class ConnectedThread extends Thread {
                 switch (msg.what) {
                     case Utilities.RECEIVE_MESSAGE:
                         byte[] readBuffer = (byte[]) msg.obj;
-                        String incomingString = new String(readBuffer, 0, msg.arg1);
-                        Log.d(Utilities.TAG, incomingString);
+                        stringBuffer.append(new String(readBuffer, 0, msg.arg1));
+                        int endOfLine = stringBuffer.indexOf("\r\n");
+                        if(endOfLine > 0){
+                            String subString = stringBuffer.substring(0, endOfLine);
+                            stringBuffer.delete(0, stringBuffer.length());
+                            Log.d(Utilities.TAG, subString);
+                        }
                         break;
                     default:
                         break;
@@ -48,9 +60,9 @@ public class ConnectedThread extends Thread {
 
     @Override
     public void run() {
-        byte[] buffer = new byte[256];
+        byte[] buffer = new byte[5000];
         int bytes;
-        while(true) {
+        while(running) {
             try{
                 bytes = readerStream.read(buffer);
                 handler.obtainMessage(Utilities.RECEIVE_MESSAGE, bytes, -1, buffer).sendToTarget();
@@ -68,5 +80,9 @@ public class ConnectedThread extends Thread {
         } catch (IOException e) {
             Log.e(Utilities.TAG, Utilities.ERROR_SENDING_DATA);
         }
+    }
+
+    public void terminate() {
+        running = false;
     }
 }

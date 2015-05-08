@@ -1,6 +1,7 @@
 package com.example.lemme.medidordenivelyvelocidad;
 
 import android.bluetooth.BluetoothClass;
+import android.bluetooth.BluetoothSocket;
 
 import java.util.UUID;
 
@@ -18,9 +19,12 @@ public abstract class Utilities {
     public static final String ERROR_MESSAGE_JOIN_CHAR = " - ";
     public static final String BLUETOOTH_ON = "... Bluetooth On ...";
     public static final int RECEIVE_MESSAGE = 1;
-    public static final int MINIMUM_SDK_SUPPORTED_VERSION = 10;
+    public static final int MINIMUM_SDK_VERSION = 10;
     public static final String SUCCESSFUL_CONNECTION = "Connection successfully established";
     public static final String CONNECTION_FAILED = "Connection Failed";
     public static final String UNABLE_TO_CLOSE_SOCKET = "Unable to close socket during connection failure";
     public static final String ERROR_SENDING_DATA = "Error sending data";
+    public static final int MAXIMUM_LENGHT_DATA_SERIE_DISPLAYED = 10;
+
+    public static BluetoothSocket bluetoothSocket;
 }

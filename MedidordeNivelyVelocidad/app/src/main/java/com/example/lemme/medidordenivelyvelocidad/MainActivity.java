@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -17,34 +18,45 @@ import java.util.UUID;
 
 public class MainActivity extends Activity {
 
-    private BluetoothSocket bluetoothSocket;
+    Button connectBluetooth;
+    Button disconnectBluetooth;
+    Button goToSpeedChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        connectBluetooth = (Button) this.findViewById(R.id.btnConnectToBluetooth);
+        disconnectBluetooth = (Button) this.findViewById(R.id.btnDisconnectFromBluetooth);
+        goToSpeedChart = (Button) this.findViewById(R.id.btnSpeedChart);
+        setEnabledStateToButtons(true, false, false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    private void setEnabledStateToButtons(Boolean enableConnect, Boolean enableDisconnect, Boolean enableCharts) {
+        connectBluetooth.setEnabled(enableConnect);
+        disconnectBluetooth.setEnabled(enableDisconnect);
+        goToSpeedChart.setEnabled(enableCharts);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        disconnectFromBluetoothModule();
     }
 
     private void disconnectFromBluetoothModule() {
-        if(bluetoothSocket != null) {
+        if(Utilities.bluetoothSocket != null) {
             try {
-                bluetoothSocket.close();
+                Utilities.bluetoothSocket.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }
-
-    public void onClickStartActivitySpeedometer(View view) {
-        createDataStreamToTalkToTheServer();
-        Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
-        startActivity(intentProfile);
     }
 
     public void onClickConnectToBluetoothDevice(View view) {
@@ -61,10 +73,19 @@ public class MainActivity extends Activity {
         tryToCreateBluetoothSocket(bluetoothDevice);
         bluetoothAdapter.cancelDiscovery();
         establishConnectionWithTheBluetoothModule();
+        setEnabledStateToButtons(false, true, true);
+
     }
 
     public void onClickDisconnectFromBluetoothModule(View view) {
         disconnectFromBluetoothModule();
+        setEnabledStateToButtons(true, false, false);
+    }
+
+    public void onClickStartActivitySpeedometer(View view) {
+        Intent intentProfile = new Intent(this, MedidorVelocidadActivity.class);
+        startActivity(intentProfile);
+        setEnabledStateToButtons(false, true, true);
     }
 
     private void checkBluetoothAdapterState() {
@@ -92,16 +113,16 @@ public class MainActivity extends Activity {
     }
 
     private void createBluetoothSocket(BluetoothDevice bluetoothDevice) throws IOException {
-        if(Build.VERSION.SDK_INT >= Utilities.MINIMUM_SDK_SUPPORTED_VERSION) {
+        if(Build.VERSION.SDK_INT >= Utilities.MINIMUM_SDK_VERSION) {
             tryToCreateInsecureRfCommSocketToServiceRecord(bluetoothDevice);
         } else
-            bluetoothSocket = bluetoothDevice.createInsecureRfcommSocketToServiceRecord(Utilities.SPP_UUID_SERVICE);
+            Utilities.bluetoothSocket = bluetoothDevice.createInsecureRfcommSocketToServiceRecord(Utilities.SPP_UUID_SERVICE);
     }
 
     private void tryToCreateInsecureRfCommSocketToServiceRecord(BluetoothDevice bluetoothDevice) {
         try {
             final Method method = bluetoothDevice.getClass().getMethod("createInsecureRfcommSocketToServiceRecord", new Class[] { UUID.class });
-            bluetoothSocket = (BluetoothSocket) method.invoke(bluetoothDevice, Utilities.SPP_UUID_SERVICE);
+            Utilities.bluetoothSocket = (BluetoothSocket) method.invoke(bluetoothDevice, Utilities.SPP_UUID_SERVICE);
         } catch (Exception e) {
             Log.e(Utilities.TAG, Utilities.INSECURE_RFCOMM_CONNECTION_FAILED, e);
         }
@@ -109,20 +130,15 @@ public class MainActivity extends Activity {
 
     private void establishConnectionWithTheBluetoothModule() {
         try {
-            bluetoothSocket.connect();
+            Utilities.bluetoothSocket.connect();
             Log.d(Utilities.TAG, Utilities.SUCCESSFUL_CONNECTION);
         } catch (IOException e) {
             Log.e(Utilities.TAG, Utilities.CONNECTION_FAILED, e);
             try {
-                bluetoothSocket.close();
+                Utilities.bluetoothSocket.close();
             } catch (IOException ex) {
                 exitAppWithError(Utilities.FATAL_ERROR, Utilities.UNABLE_TO_CLOSE_SOCKET);
             }
         }
-    }
-
-    private void createDataStreamToTalkToTheServer() {
-        ConnectedThread connectedThread = new ConnectedThread(bluetoothSocket);
-        connectedThread.start();
     }
 }

@@ -12,6 +12,7 @@ import java.util.Random;
 public class DataSerie {
     private String name;
     private ArrayList<Float> serie;
+    private ArrayList<Float> serieHistory;
     private SimpleXYSeries.ArrayFormat format;
     private LineAndPointFormatter lineAndPointFormatter;
 
@@ -20,10 +21,19 @@ public class DataSerie {
         this.lineAndPointFormatter = lineAndPointFormatter;
         this.name = name;
         serie = new ArrayList<>();
+        serieHistory = new ArrayList<>();
     }
 
     public void addSensorLecture(float sensorLecture) {
         serie.add(new Float(sensorLecture));
+        updateSerieHistory();
+        if(serie.size() > Utilities.MAXIMUM_LENGHT_DATA_SERIE_DISPLAYED) {
+            serie.remove(0);
+        }
+    }
+
+    private void updateSerieHistory() {
+        serieHistory.add(serie.get(serie.size() - 1));
     }
 
     public void initializeSerieWithRandomData() {
@@ -31,6 +41,7 @@ public class DataSerie {
         for(int i = 0; i < 10; i++) {
             serie.add(new Float(random.nextFloat()));
         }
+        serieHistory.addAll(serie);
     }
 
     public SimpleXYSeries.ArrayFormat getFormat() {

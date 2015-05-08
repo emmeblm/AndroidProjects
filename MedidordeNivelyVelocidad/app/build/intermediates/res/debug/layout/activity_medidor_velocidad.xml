@@ -29,5 +29,6 @@
         android:textColor="@android:color/black"
         android:clickable="true"
         android:onClick="onClickAddSensorLecture" />
+
 </LinearLayout>
 <!-- From: file:/Users/lemme/AndroidStudioProjects/MedidordeNivelyVelocidad/app/src/main/res/layout/activity_medidor_velocidad.xml -->
