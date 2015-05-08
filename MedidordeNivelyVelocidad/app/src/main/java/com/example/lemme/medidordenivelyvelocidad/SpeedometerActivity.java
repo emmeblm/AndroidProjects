@@ -1,20 +1,11 @@
 package com.example.lemme.medidordenivelyvelocidad;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothSocket;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import com.androidplot.xy.LineAndPointFormatter;
-import com.androidplot.xy.PointLabelFormatter;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYPlot;
 
 import java.util.HashMap;
-import java.util.Random;
 
 public class SpeedometerActivity extends Activity {
 
@@ -24,7 +15,7 @@ public class SpeedometerActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_medidor_velocidad);
+        setContentView(R.layout.activity_speedometer);
         initializeChart();
     }
 

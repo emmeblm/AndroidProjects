@@ -24,8 +24,8 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_medidor_nivel=0x7f030001;
-        public static final int activity_medidor_velocidad=0x7f030002;
+        public static final int activity_level_meter =0x7f030001;
+        public static final int activity_speedometer =0x7f030002;
     }
     public static final class menu {
         public static final int menu_main=0x7f070000;

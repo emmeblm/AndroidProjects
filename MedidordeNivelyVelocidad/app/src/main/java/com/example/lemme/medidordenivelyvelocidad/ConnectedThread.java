@@ -71,7 +71,7 @@ public class ConnectedThread extends Thread {
 
     @Override
     public void run() {
-        byte[] buffer = new byte[5000];
+        byte[] buffer = new byte[256];
         int bytes;
         while(running) {
             try{
