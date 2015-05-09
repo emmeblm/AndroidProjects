@@ -1,0 +1,118 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.lemme.arrayadapteritemsdinamicossqlite.NewContactActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/new_contact_title"
+        android:id="@+id/title"
+        android:gravity="center" />
+
+    <ImageView
+        android:layout_width="@dimen/profile_photo_dimension"
+        android:layout_height="@dimen/profile_photo_dimension"
+        android:id="@+id/photo"
+        android:layout_margin="@dimen/margin_right_title"
+        android:layout_gravity="center"
+        android:background="@mipmap/ic_launcher" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/select_layout_photo_dimensions"
+        android:layout_marginTop="@dimen/layout_margin_top_bottom"
+        android:layout_marginBottom="@dimen/layout_margin_top_bottom"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/select_photo_dimensions"
+            android:id="@+id/photoOption1"
+            android:layout_margin="@dimen/margin_right_title"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/contact1"
+            android:clickable="true"
+            android:onClick="onClickChangePhoto" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/select_photo_dimensions"
+            android:id="@+id/photoOption2"
+            android:layout_margin="@dimen/margin_right_title"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/contact2" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/select_photo_dimensions"
+            android:id="@+id/photoOption3"
+            android:layout_margin="@dimen/margin_right_title"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/contact3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_marginTop="@dimen/layout_margin_top_bottom"
+        android:layout_marginBottom="@dimen/layout_margin_top_bottom">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:hint="@string/name_title"
+            android:textSize="@dimen/abc_text_size_large_material" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_marginTop="@dimen/layout_margin_top_bottom"
+        android:layout_marginBottom="@dimen/layout_margin_top_bottom">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:hint="@string/phone_title"
+            android:textSize="@dimen/abc_text_size_large_material" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/layout_height"
+        android:layout_marginTop="@dimen/layout_margin_top_bottom"
+        android:layout_marginBottom="@dimen/layout_margin_top_bottom">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:hint="@string/email_title"
+            android:textSize="@dimen/abc_text_size_large_material" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:id="@+id/btnCreateContact"
+        android:layout_gravity="center_horizontal"
+        android:onClick="onClickSaveContact"
+        android:clickable="true" />
+
+</LinearLayout>

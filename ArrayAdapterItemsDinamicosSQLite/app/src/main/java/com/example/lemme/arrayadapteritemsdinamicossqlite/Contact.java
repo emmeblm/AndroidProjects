@@ -12,15 +12,13 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
     private int photo;
     private String name;
     private String phone;
-    private String address;
-    private int code;
+    private String email;
 
-    public Contact(int photo, String name, String phone, String address, int code) {
+    public Contact(int photo, String name, String phone, String email, int code) {
         this.photo = photo;
         this.name = name;
         this.phone = phone;
-        this.address = address;
-        this.code = code;
+        this.email = email;
     }
 
     public Contact(Parcel parcel) {
@@ -35,10 +33,9 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
         parcel.readStringArray(stringTemp);
 
         photo = intTemp[0];
-        code = intTemp[1];
         name = stringTemp[0];
         phone = stringTemp[1];
-        address = stringTemp[2];
+        email = stringTemp[2];
     }
 
     public int getPhoto() {
@@ -53,12 +50,8 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
         return phone;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public int getCode() {
-        return code;
+    public String getEmail() {
+        return email;
     }
 
     @Override
@@ -68,8 +61,8 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeIntArray(new int[] {photo, code});
-        parcel.writeStringArray(new String[] {name, phone, address});
+        parcel.writeIntArray(new int[] {photo});
+        parcel.writeStringArray(new String[] {name, phone, email});
     }
 
     public static final Parcelable.Creator<Contact> CREATOR

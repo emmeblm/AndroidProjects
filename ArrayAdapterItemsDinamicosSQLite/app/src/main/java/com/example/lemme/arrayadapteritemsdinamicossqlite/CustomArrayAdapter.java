@@ -6,9 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-import com.example.lemme.arrayadapteritemsdinamicossqlite.Contact;
-import com.example.lemme.arrayadapteritemsdinamicossqlite.R;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -54,8 +51,7 @@ public class CustomArrayAdapter extends ArrayAdapter<Contact> {
         contactInfoViews.put("Photo", rowView.findViewById(R.id.contactPhoto));
         contactInfoViews.put("Name", rowView.findViewById(R.id.contactName));
         contactInfoViews.put("Phone", rowView.findViewById(R.id.contactPhone));
-        contactInfoViews.put("Address", rowView.findViewById(R.id.contactAddress));
-        contactInfoViews.put("Code", rowView.findViewById(R.id.contactCode));
+        contactInfoViews.put("Email", rowView.findViewById(R.id.contactEmail));
 
         ViewHolder viewHolder = new ViewHolder(contactInfoViews);
 
