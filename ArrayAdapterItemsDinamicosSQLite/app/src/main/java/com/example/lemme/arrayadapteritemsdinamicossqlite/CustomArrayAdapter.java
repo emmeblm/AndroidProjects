@@ -22,39 +22,4 @@ public class CustomArrayAdapter extends ArrayAdapter<Contact> {
         this.context = context;
         this.contactList = contactList;
     }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View rowView = convertView;
-
-        if(rowView == null)
-            rowView = createNewRowView();
-
-        Contact contact = contactList.get(position);
-        ViewHolder viewHolder = (ViewHolder) rowView.getTag();
-        viewHolder.setContactInfoOnEachView(contact);
-
-        return rowView;
-    }
-
-    private View createNewRowView() {
-        LayoutInflater inflater = context.getLayoutInflater();
-        View newRowView = inflater.inflate(R.layout.rowlist, null);
-        final ViewHolder viewHolder = createContactViewHolder(newRowView);
-        newRowView.setTag(viewHolder);
-
-        return newRowView;
-    }
-
-    private ViewHolder createContactViewHolder(View rowView) {
-        HashMap<String, View> contactInfoViews = new HashMap<>();
-        contactInfoViews.put("Photo", rowView.findViewById(R.id.contactPhoto));
-        contactInfoViews.put("Name", rowView.findViewById(R.id.contactName));
-        contactInfoViews.put("Phone", rowView.findViewById(R.id.contactPhone));
-        contactInfoViews.put("Email", rowView.findViewById(R.id.contactEmail));
-
-        ViewHolder viewHolder = new ViewHolder(contactInfoViews);
-
-        return viewHolder;
-    }
 }
