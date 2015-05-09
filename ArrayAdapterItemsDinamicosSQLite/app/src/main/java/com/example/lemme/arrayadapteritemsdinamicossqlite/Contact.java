@@ -14,7 +14,7 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
     private String phone;
     private String email;
 
-    public Contact(int photo, String name, String phone, String email, int code) {
+    public Contact(int photo, String name, String phone, String email) {
         this.photo = photo;
         this.name = name;
         this.phone = phone;

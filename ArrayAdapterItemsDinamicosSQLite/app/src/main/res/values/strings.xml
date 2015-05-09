@@ -10,4 +10,5 @@
     <string name="title_activity_new_contact">NewContactActivity</string>
     <string name="new_contact_title">Nuevo Contacto</string>
     <string name="save_new_contact">Guardar</string>
+    <string name="fields_validation_error_message">Ingrese los campos correctamente</string>
 </resources>

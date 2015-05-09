@@ -1,6 +1,7 @@
 package com.example.lemme.arrayadapteritemsdinamicossqlite;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -8,15 +9,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 
 public class NewContactActivity extends Activity {
 
-    ImageView contactPhoto;
-    EditText contactName;
-    EditText contactPhone;
-    EditText contactEmail;
-    int photo;
+    private ImageView contactPhoto;
+    private EditText contactName;
+    private EditText contactPhone;
+    private EditText contactEmail;
+    private int photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,28 @@ public class NewContactActivity extends Activity {
     }
 
     public void onClickSaveContact(View view) {
+        String name = contactName.getText().toString();
+        String phone = contactPhone.getText().toString();
+        String email = contactEmail.getText().toString();
 
+        saveContact(name, phone, email);
+    }
+
+    private void saveContact(String name, String phone, String email) {
+        if (validateContactDataBeforeSaving(name, phone, email)) {
+            Contact contact = new Contact(photo, name, phone, email);
+            contact.save();
+
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } else {
+            Toast.makeText(this, getString(R.string.fields_validation_error_message), Toast.LENGTH_SHORT);
+        }
+    }
+
+    private boolean validateContactDataBeforeSaving(String name, String phone, String email) {
+        if(name.length() > 0 && phone.length() > 0 && email.length() > 0 && photo != 0)
+            return  true;
+        return false;
     }
 }
