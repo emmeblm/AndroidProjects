@@ -1,6 +1,19 @@
 <resources>
-    <string name="app_name">Array Adapter Items Dinamicos SQLite</string>
+    <string name="app_name">Array Adapter Items Dinamicos</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="contact_1_name">Luisa Emme</string>
+    <string name="contact_1_phone">0992511167</string>
+    <string name="contact_1_address">Av. América</string>
+    <string name="contact_2_name">María Bedoya</string>
+    <string name="contact_2_phone">0998201148</string>
+    <string name="contact_2_address">Buenos Aires</string>
+    <string name="contact_3_name">Edison Ayala</string>
+    <string name="contact_3_phone">0982534986</string>
+    <string name="contact_3_address">Guayaquil</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+    <string name="name_title">Name:</string>
+    <string name="phone_title">Phone:</string>
+    <string name="address_title">Address:</string>
 </resources>
