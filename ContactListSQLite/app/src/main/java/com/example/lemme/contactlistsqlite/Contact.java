@@ -2,7 +2,6 @@ package com.example.lemme.contactlistsqlite;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
 import com.orm.SugarRecord;
 
 /**
@@ -30,16 +29,10 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
     }
 
     private void readFromParcel(Parcel parcel) {
-        int[] intTemp = new int[2];
-        String[] stringTemp = new String[3];
-
-        parcel.readIntArray(intTemp);
-        parcel.readStringArray(stringTemp);
-
-        photo = intTemp[0];
-        name = stringTemp[0];
-        phone = stringTemp[1];
-        email = stringTemp[2];
+        photo = parcel.readInt();
+        name = parcel.readString();
+        phone = parcel.readString();
+        email = parcel.readString();
     }
 
     public int getPhoto() {
@@ -65,8 +58,10 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeIntArray(new int[] {photo});
-        parcel.writeStringArray(new String[] {name, phone, email});
+        parcel.writeInt(photo);
+        parcel.writeString(name);
+        parcel.writeString(phone);
+        parcel.writeString(email);
     }
 
     public static final Parcelable.Creator<Contact> CREATOR

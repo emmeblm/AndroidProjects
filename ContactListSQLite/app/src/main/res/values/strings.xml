@@ -10,4 +10,7 @@
     <string name="email_title">Email</string>
     <string name="save">Guardar</string>
     <string name="fields_validation_error_message">Ingrese los campos correctamente</string>
+    <string name="title_activity_profile">ProfileActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
