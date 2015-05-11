@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class SpeedometerActivity extends Activity {
 
@@ -39,7 +40,8 @@ public class SpeedometerActivity extends Activity {
     }
 
     private void initializeChart() {
-        HashMap<String, Integer> serieOptions = new HashMap<>();
+        HashMap<String, Object> serieOptions = new HashMap<>();
+        serieOptions.put("Name", getString(R.string.speed_serie_name));
         serieOptions.put("Line Color", new Integer(Color.rgb(0, 200, 0)));
         serieOptions.put("Point Color", new Integer(Color.rgb(0, 100, 0)));
         serieOptions.put("Fill Color", new Integer(Color.rgb(150, 190, 150)));
@@ -47,6 +49,6 @@ public class SpeedometerActivity extends Activity {
         serieOptions.put("Min Y-Axis Value", Utilities.MIN_Y_AXIS_VALUE_SPEEDOMETER);
         serieOptions.put("Max Y-Axis Value", Utilities.MAX_Y_AXIS_VALUE_SPEEDOMETER);
 
-        speedChart = new Chart(getString(R.string.speed_serie_name), serieOptions, findViewById(R.id.chartSpeed));
+        speedChart = new Chart(findViewById(R.id.chartSpeed), serieOptions);
     }
 }
