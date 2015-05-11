@@ -26,6 +26,12 @@ public abstract class Utilities {
     public static final String ERROR_SENDING_DATA = "Error sending data";
     public static final int MAXIMUM_LENGHT_DATA_SERIE_DISPLAYED = 10;
     public static final int ENABLE_BLUETOOTH_REQUEST = 1;
+    public static final int SENSOR_SAMPLING_STEP = 1;
+    public static final Integer MIN_Y_AXIS_VALUE_SPEEDOMETER = 200;
+    public static final Integer MAX_Y_AXIS_VALUE_SPEEDOMETER = 1030;
+    public static final Integer MIN_Y_AXIS_VALUE_LEVEL_METER = 200;
+    public static final Integer MAX_Y_AXIS_VALUE_LEVEL_METER = 1030;
+
 
     public static BluetoothSocket bluetoothSocket;
 }

@@ -2,9 +2,7 @@ package com.example.lemme.medidordenivelyvelocidad;
 
 import com.androidplot.xy.LineAndPointFormatter;
 import com.androidplot.xy.SimpleXYSeries;
-
 import java.util.ArrayList;
-import java.util.Random;
 
 /**
  * Created by lemme on 4/27/15.
