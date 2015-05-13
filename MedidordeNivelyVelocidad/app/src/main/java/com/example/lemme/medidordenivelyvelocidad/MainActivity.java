@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,6 +43,14 @@ public class MainActivity extends Activity {
         CompoundButton.OnCheckedChangeListener onCheckedChangeListener = initializeOnCheckedChangeListener(bluetoothSwitch);
         setCheckedStateListenerToBluetoothSwitch(bluetoothSwitch, onCheckedChangeListener);
         setEnabledStateToChartButtons(bluetoothSwitch.isChecked());
+        createBroadcastReceiverToListenToBluetoothAdapterState();
+        registerBroadcastReceiverToBluetoothEvents();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterBroadcastReceiverToBluetoothEvents();
     }
 
     private CompoundButton.OnCheckedChangeListener initializeOnCheckedChangeListener(final Switch bluetoothSwitch) {
@@ -71,8 +80,6 @@ public class MainActivity extends Activity {
         if(isContinue) {
             setEnabledStateToChartButtons(bluetoothSwitch.isChecked());
             bluetoothState.setText(getString(R.string.connected));
-            createBroadcastReceiverToListenToBluetoothAdapterState();
-            registerBroadcastReceiverToBluetoothEvents();
             bluetoothHandler.continueConnecting();
         }
         else
@@ -90,10 +97,21 @@ public class MainActivity extends Activity {
     public void setEnabledStateToChartButtons(Boolean bluetoothSwitchIsChecked) {
         goToSpeedChart.setEnabled(bluetoothSwitchIsChecked);
         goToLevelChart.setEnabled(bluetoothSwitchIsChecked);
-        if(bluetoothSwitchIsChecked)
+
+        if(bluetoothSwitchIsChecked) {
             bluetoothState.setText(getString(R.string.connected));
-        else
+            goToSpeedChart.setTextColor(getResources().getColor(R.color.whiteEnabled));
+            goToLevelChart.setTextColor(getResources().getColor(R.color.whiteEnabled));
+            goToSpeedChart.setBackgroundColor(getResources().getColor(R.color.transparentBlueBluetooth));
+            goToLevelChart.setBackgroundColor(getResources().getColor(R.color.transparentBlueBluetooth));
+        }
+        else {
             bluetoothState.setText(getString(R.string.disconnected));
+            goToSpeedChart.setTextColor(getResources().getColor(R.color.greyDisabled));
+            goToLevelChart.setTextColor(getResources().getColor(R.color.greyDisabled));
+            goToSpeedChart.setBackgroundColor(Color.TRANSPARENT);
+            goToLevelChart.setBackgroundColor(Color.TRANSPARENT);
+        }
     }
 
     public void initializeBluetoothHandler(BluetoothHandler handler) {
@@ -152,7 +170,8 @@ public class MainActivity extends Activity {
     }
 
     public void onClickStartActivityLevelMeter(View view) {
-
+        Intent intentProfile = new Intent(this, LevelMeterActivity.class);
+        startActivity(intentProfile);
     }
 
     @Override

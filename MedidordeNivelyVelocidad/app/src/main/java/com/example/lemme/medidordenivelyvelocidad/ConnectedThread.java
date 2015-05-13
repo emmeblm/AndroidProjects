@@ -50,8 +50,12 @@ public class ConnectedThread extends Thread {
                             String subString = stringBuffer.substring(0, endOfLine);
                             stringBuffer.delete(0, stringBuffer.length());
                             Log.d(Utilities.TAG, subString);
-                            chart.getSerie().addSensorLecture(Float.valueOf(subString));
-                            chart.updateChart();
+                            try {
+                                chart.getSerie().addSensorLecture(Float.valueOf(subString));
+                                chart.updateChart();
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
                         }
                         break;
                     default:

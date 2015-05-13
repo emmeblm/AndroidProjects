@@ -26,7 +26,7 @@ public class Chart {
         this.chartPlot = (XYPlot) chartView;
     }
 
-    public void initializeSpeedSerie() {
+    public void initializeSerie() {
         serie = new DataSerie(SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, serieFormat, (String) serieOptions.get("Name"));
     }
 

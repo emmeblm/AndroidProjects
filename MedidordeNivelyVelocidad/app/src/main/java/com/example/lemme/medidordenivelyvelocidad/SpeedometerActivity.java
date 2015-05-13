@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import java.util.HashMap;
-import java.util.Objects;
 
 public class SpeedometerActivity extends Activity {
 
@@ -24,13 +23,16 @@ public class SpeedometerActivity extends Activity {
     protected void onResume() {
         super.onResume();
         createDataStreamToTalkToTheServer();
+        connectedThread.write("S");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        if(connectedThread != null)
+        if(connectedThread != null) {
+            connectedThread.write("0");
             connectedThread.terminate();
+        }
     }
 
     private void createDataStreamToTalkToTheServer() {
@@ -43,16 +45,16 @@ public class SpeedometerActivity extends Activity {
     private void initializeChart() {
         HashMap<String, Object> serieOptions = new HashMap<>();
         serieOptions.put("Name", getString(R.string.speed_serie_name));
-        serieOptions.put("Line Color", Color.rgb(0, 200, 0));
-        serieOptions.put("Point Color", Color.rgb(0, 100, 0));
-        serieOptions.put("Fill Color", Color.rgb(150, 190, 150));
+        serieOptions.put("Line Color", getResources().getColor(R.color.redBluetoothDot));
+        serieOptions.put("Point Color", getResources().getColor(R.color.darkRedBluetoothDot));
+        serieOptions.put("Fill Color", getResources().getColor(R.color.transparentRedBluetoothDot));
         serieOptions.put("Sampling Step", Utilities.SENSOR_SAMPLING_STEP);
         serieOptions.put("Min Y-Axis Value", Utilities.MIN_Y_AXIS_VALUE_SPEEDOMETER);
         serieOptions.put("Max Y-Axis Value", Utilities.MAX_Y_AXIS_VALUE_SPEEDOMETER);
 
         speedChart = new Chart(findViewById(R.id.chartSpeed), serieOptions);
         speedChart.setDefaultSerieFormat();
-        speedChart.initializeSpeedSerie();
+        speedChart.initializeSerie();
         speedChart.updateChart();
     }
 }

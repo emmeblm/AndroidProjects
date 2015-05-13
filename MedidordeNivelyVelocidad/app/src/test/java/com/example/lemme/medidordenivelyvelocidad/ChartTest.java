@@ -1,6 +1,4 @@
 package com.example.lemme.medidordenivelyvelocidad;
-import android.graphics.Color;
-import android.view.View;
 
 import com.androidplot.xy.BoundaryMode;
 import com.androidplot.xy.LineAndPointFormatter;
@@ -43,7 +41,7 @@ public class ChartTest {
         initializeStubs();
         chart = new Chart(chartViewMock, serieOptionsStub);
         chart.setSerieFormat(lineAndPointFormatterMock);
-        chart.initializeSpeedSerie();
+        chart.initializeSerie();
         doNothing().when(chartViewMock).removeSeries(any(SimpleXYSeries.class));
         when(chartViewMock.addSeries(any(SimpleXYSeries.class), any(LineAndPointFormatter.class))).thenReturn(true);
         doNothing().when(chartViewMock).setDomainStepValue(anyInt());
