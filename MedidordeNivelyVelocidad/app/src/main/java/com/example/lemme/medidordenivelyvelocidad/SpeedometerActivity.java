@@ -35,6 +35,7 @@ public class SpeedometerActivity extends Activity {
 
     private void createDataStreamToTalkToTheServer() {
         connectedThread = new ConnectedThread(Utilities.bluetoothSocket, speedChart);
+        connectedThread.initializeHandler();
         connectedThread.start();
         Log.d(Utilities.TAG, "... Listening ... ");
     }
@@ -42,13 +43,16 @@ public class SpeedometerActivity extends Activity {
     private void initializeChart() {
         HashMap<String, Object> serieOptions = new HashMap<>();
         serieOptions.put("Name", getString(R.string.speed_serie_name));
-        serieOptions.put("Line Color", new Integer(Color.rgb(0, 200, 0)));
-        serieOptions.put("Point Color", new Integer(Color.rgb(0, 100, 0)));
-        serieOptions.put("Fill Color", new Integer(Color.rgb(150, 190, 150)));
+        serieOptions.put("Line Color", Color.rgb(0, 200, 0));
+        serieOptions.put("Point Color", Color.rgb(0, 100, 0));
+        serieOptions.put("Fill Color", Color.rgb(150, 190, 150));
         serieOptions.put("Sampling Step", Utilities.SENSOR_SAMPLING_STEP);
         serieOptions.put("Min Y-Axis Value", Utilities.MIN_Y_AXIS_VALUE_SPEEDOMETER);
         serieOptions.put("Max Y-Axis Value", Utilities.MAX_Y_AXIS_VALUE_SPEEDOMETER);
 
         speedChart = new Chart(findViewById(R.id.chartSpeed), serieOptions);
+        speedChart.setDefaultSerieFormat();
+        speedChart.initializeSpeedSerie();
+        speedChart.updateChart();
     }
 }

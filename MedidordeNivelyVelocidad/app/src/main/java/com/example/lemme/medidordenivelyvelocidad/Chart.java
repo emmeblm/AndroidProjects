@@ -19,20 +19,22 @@ public class Chart {
     private XYPlot chartPlot;
     private DataSerie serie;
     private SimpleXYSeries chartSerie;
+    private LineAndPointFormatter serieFormat;
 
     public Chart(View chartView, HashMap<String, Object> serieOptions) {
         this.serieOptions = serieOptions;
-        serie = initializeSpeedSerie();
         this.chartPlot = (XYPlot) chartView;
-        updateChart();
     }
 
-    private DataSerie initializeSpeedSerie() {
+    public void initializeSpeedSerie() {
+        serie = new DataSerie(SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, serieFormat, (String) serieOptions.get("Name"));
+    }
+
+    public void setDefaultSerieFormat() {
         int lineColor = (Integer) serieOptions.get("Line Color");
         int pointColor = (Integer) serieOptions.get("Point Color");
         int fillColor = (Integer) serieOptions.get("Fill Color");
-        LineAndPointFormatter serieFormat = new LineAndPointFormatter(lineColor, pointColor, fillColor , new PointLabelFormatter(0));
-        return new DataSerie(SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, serieFormat, (String) serieOptions.get("Name"));
+        this.serieFormat = new LineAndPointFormatter(lineColor, pointColor, fillColor , new PointLabelFormatter(0));
     }
 
     public void updateChart() {
@@ -47,5 +49,9 @@ public class Chart {
 
     public DataSerie getSerie() {
         return serie;
+    }
+
+    public void setSerieFormat(LineAndPointFormatter serieFormat) {
+        this.serieFormat = serieFormat;
     }
 }

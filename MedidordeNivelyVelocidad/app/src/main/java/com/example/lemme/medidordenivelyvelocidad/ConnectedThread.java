@@ -1,14 +1,9 @@
 package com.example.lemme.medidordenivelyvelocidad;
 
-import android.app.Activity;
 import android.bluetooth.BluetoothSocket;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.widget.Toast;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -20,11 +15,10 @@ public class ConnectedThread extends Thread {
     private final BluetoothSocket bluetoothSocket;
     private Chart chart;
     private StringBuffer stringBuffer;
-
     private final InputStream readerStream;
     private final OutputStream writerStream;
-
     private static Handler handler;
+
     private volatile boolean running = true;
 
     public ConnectedThread(final BluetoothSocket bluetoothSocket, final Chart chart) {
@@ -34,18 +28,16 @@ public class ConnectedThread extends Thread {
         InputStream reader = null;
         OutputStream writer = null;
         try {
-            reader = bluetoothSocket.getInputStream();
-            writer = bluetoothSocket.getOutputStream();
+            reader = this.bluetoothSocket.getInputStream();
+            writer = this.bluetoothSocket.getOutputStream();
         } catch (IOException e) {
             e.printStackTrace();
         }
         readerStream = reader;
         writerStream = writer;
-
-        initializeHandler();
     }
 
-    private void initializeHandler() {
+    public void initializeHandler() {
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -79,7 +71,7 @@ public class ConnectedThread extends Thread {
                 handler.obtainMessage(Utilities.RECEIVE_MESSAGE, bytes, -1, buffer).sendToTarget();
             } catch (IOException e) {
                 e.printStackTrace();
-                break;
+                terminate();
             }
         }
     }
@@ -95,5 +87,21 @@ public class ConnectedThread extends Thread {
 
     public void terminate() {
         running = false;
+    }
+
+    public InputStream getReaderStream() {
+        return readerStream;
+    }
+
+    public OutputStream getWriterStream() {
+        return writerStream;
+    }
+
+    public void setHandler(Handler handler) {
+        ConnectedThread.handler = handler;
+    }
+
+    public boolean isRunning() {
+        return running;
     }
 }

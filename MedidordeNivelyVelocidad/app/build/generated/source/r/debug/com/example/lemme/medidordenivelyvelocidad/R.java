@@ -15,12 +15,13 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080005;
-        public static final int btnConnectToBluetooth=0x7f080001;
-        public static final int btnDisconnectFromBluetooth=0x7f080002;
+        public static final int action_settings=0x7f080006;
+        public static final int bluetoothOnOff=0x7f080002;
+        public static final int btnLevelChart=0x7f080004;
         public static final int btnSpeedChart=0x7f080003;
         public static final int chartLevel=0x7f080000;
-        public static final int chartSpeed=0x7f080004;
+        public static final int chartSpeed=0x7f080005;
+        public static final int textView=0x7f080001;
     }
     public static final class layout {
         public static final int activity_level_meter=0x7f030000;
@@ -40,12 +41,14 @@ public final class R {
         public static final int action_settings=0x7f050000;
         public static final int app_name=0x7f050001;
         public static final int connect_to_bluetooth_module=0x7f050002;
-        public static final int disconnect_from_bluetooth_module=0x7f050003;
-        public static final int go_to_speedometer=0x7f050004;
-        public static final int hello_blank_fragment=0x7f050005;
-        public static final int speed_serie_name=0x7f050006;
-        public static final int title_activity_medidor_nivel=0x7f050007;
-        public static final int title_activity_medidor_velocidad=0x7f050008;
+        public static final int connected=0x7f050003;
+        public static final int disconnect_from_bluetooth_module=0x7f050004;
+        public static final int disconnected=0x7f050005;
+        public static final int go_to_level_meter=0x7f050006;
+        public static final int go_to_speedometer=0x7f050007;
+        public static final int speed_serie_name=0x7f050008;
+        public static final int title_activity_medidor_nivel=0x7f050009;
+        public static final int title_activity_medidor_velocidad=0x7f05000a;
     }
     public static final class style {
         /**  Customize your theme here. 

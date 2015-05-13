@@ -18,6 +18,8 @@ public abstract class Utilities {
     public static final String INSECURE_RFCOMM_CONNECTION_FAILED = "Could not create Insecure RFComm Connection";
     public static final String ERROR_MESSAGE_JOIN_CHAR = " - ";
     public static final String BLUETOOTH_ON = "... Bluetooth On ...";
+    public static final String REQUEST_USER = "Request User";
+    public static final String BLUETOOTH_ADAPTER_DISABLED = "Bluetooth Adapter Disabled. Prompt User to Enable Bluetooth.";
     public static final int RECEIVE_MESSAGE = 1;
     public static final int MINIMUM_SDK_VERSION = 10;
     public static final String SUCCESSFUL_CONNECTION = "Connection successfully established";
