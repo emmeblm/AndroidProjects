@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -19,6 +20,7 @@ public class MainActivity extends Activity {
     private Switch bluetoothSwitch;
     private Button goToSpeedChart;
     private Button goToLevelChart;
+    private TextView bluetoothState;
     private BroadcastReceiver broadcastReceiver;
     private BluetoothHandler bluetoothHandler;
 
@@ -29,6 +31,7 @@ public class MainActivity extends Activity {
         bluetoothSwitch = (Switch) this.findViewById(R.id.bluetoothOnOff);
         goToSpeedChart = (Button) this.findViewById(R.id.btnSpeedChart);
         goToLevelChart = (Button) this.findViewById(R.id.btnLevelChart);
+        bluetoothState = (TextView) this.findViewById(R.id.moduleState);
 
         initializeBluetoothHandler(new BluetoothHandler(BluetoothAdapter.getDefaultAdapter(), this));
     }
@@ -51,6 +54,8 @@ public class MainActivity extends Activity {
                 else {
                     bluetoothHandler.disconnectFromBluetoothDevice();
                     unregisterBroadcastReceiverToBluetoothEvents();
+                    setEnabledStateToChartButtons(false);
+                    bluetoothState.setText(getString(R.string.disconnected));
                 }
 
             }
@@ -65,6 +70,7 @@ public class MainActivity extends Activity {
     public void continueConnecting(Boolean isContinue) {
         if(isContinue) {
             setEnabledStateToChartButtons(bluetoothSwitch.isChecked());
+            bluetoothState.setText(getString(R.string.connected));
             createBroadcastReceiverToListenToBluetoothAdapterState();
             registerBroadcastReceiverToBluetoothEvents();
             bluetoothHandler.continueConnecting();
@@ -84,6 +90,10 @@ public class MainActivity extends Activity {
     public void setEnabledStateToChartButtons(Boolean bluetoothSwitchIsChecked) {
         goToSpeedChart.setEnabled(bluetoothSwitchIsChecked);
         goToLevelChart.setEnabled(bluetoothSwitchIsChecked);
+        if(bluetoothSwitchIsChecked)
+            bluetoothState.setText(getString(R.string.connected));
+        else
+            bluetoothState.setText(getString(R.string.disconnected));
     }
 
     public void initializeBluetoothHandler(BluetoothHandler handler) {
@@ -149,6 +159,9 @@ public class MainActivity extends Activity {
     public void onBackPressed() {
         unregisterBroadcastReceiverToBluetoothEvents();
         bluetoothHandler.disconnectFromBluetoothDevice();
+        bluetoothState.setText(getString(R.string.disconnected));
+        bluetoothSwitch.setChecked(false);
+        setEnabledStateToChartButtons(false);
         super.onBackPressed();
     }
 }
