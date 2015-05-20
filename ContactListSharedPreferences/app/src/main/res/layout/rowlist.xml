@@ -7,9 +7,9 @@
         android:layout_width="@dimen/row_photo_dimensions"
         android:layout_height="60dp"
         android:id="@+id/photoContact"
-        android:background="@mipmap/ic_launcher"
         android:contentDescription="@string/description_photo"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:orientation="vertical"

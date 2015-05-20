@@ -12,12 +12,14 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
     private String name;
     private String phone;
     private String email;
+    private String imagePath;
 
-    public Contact(int photo, String name, String phone, String email) {
+    public Contact(int photo, String name, String phone, String email, String imagePath) {
         this.photo = photo;
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.imagePath = imagePath;
     }
 
     public Contact(Parcel parcel) {
@@ -33,6 +35,7 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
         name = parcel.readString();
         phone = parcel.readString();
         email = parcel.readString();
+        imagePath = parcel.readString();
     }
 
     public int getPhoto() {
@@ -51,6 +54,10 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
         return email;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -62,6 +69,7 @@ public class Contact extends SugarRecord<Contact> implements Parcelable {
         parcel.writeString(name);
         parcel.writeString(phone);
         parcel.writeString(email);
+        parcel.writeString(imagePath);
     }
 
     public static final Parcelable.Creator<Contact> CREATOR

@@ -19,4 +19,6 @@
     <string name="login">Iniciar Sesión</string>
     <string name="default_value" />
     <string name="welcome">"Bienvenido "</string>
+    <string name="take_photo">Tomar Foto</string>
+    <string name="photo_does_not_exist">La foto no ha sido tomada</string>
 </resources>

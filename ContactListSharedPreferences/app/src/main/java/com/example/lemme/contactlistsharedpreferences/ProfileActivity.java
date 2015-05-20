@@ -1,6 +1,8 @@
 package com.example.lemme.contactlistsharedpreferences;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +12,8 @@ import android.widget.TextView;
 import com.example.lemme.contactlistsharedpreferences.Contact;
 import com.example.lemme.contactlistsharedpreferences.R;
 
+import java.io.File;
+
 
 public class ProfileActivity extends Activity {
 
@@ -18,6 +22,7 @@ public class ProfileActivity extends Activity {
     private TextView contactName;
     private TextView contactPhone;
     private TextView contactEmail;
+    private Bitmap imageCache;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +43,25 @@ public class ProfileActivity extends Activity {
     }
 
     private void setContactInfoInTextViews() {
-        contactPhoto.setImageResource(contact.getPhoto());
+        setPhoto(contact);
         contactName.setText(contact.getName());
         contactPhone.setText(contact.getPhone());
         contactEmail.setText(contact.getEmail());
     }
 
-
+    public void setPhoto(Contact contact) {
+        try {
+            String imagePath = contact.getImagePath();
+            if (imagePath == null || imagePath.length() == 0)
+                contactPhoto.setImageResource(contact.getPhoto());
+            else {
+                if(imageCache != null)
+                    imageCache.recycle();
+                imageCache = BitmapFactory.decodeFile(imagePath);
+                contactPhoto.setImageBitmap(imageCache);
+            }
+        } catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
 }

@@ -22,7 +22,7 @@
         android:id="@+id/photo"
         android:layout_margin="@dimen/margin_right_title"
         android:layout_gravity="center"
-        android:background="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher" />
 
     <TextView
         android:layout_width="fill_parent"
