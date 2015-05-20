@@ -107,8 +107,8 @@ public class MainActivity extends Activity {
         }
         else {
             bluetoothState.setText(getString(R.string.disconnected));
-            goToSpeedChart.setTextColor(getResources().getColor(R.color.greyDisabled));
-            goToLevelChart.setTextColor(getResources().getColor(R.color.greyDisabled));
+            goToSpeedChart.setTextColor(getResources().getColor(R.color.grayDisabled));
+            goToLevelChart.setTextColor(getResources().getColor(R.color.grayDisabled));
             goToSpeedChart.setBackgroundColor(Color.TRANSPARENT);
             goToLevelChart.setBackgroundColor(Color.TRANSPARENT);
         }

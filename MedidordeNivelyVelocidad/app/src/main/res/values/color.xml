@@ -9,6 +9,6 @@
     <color name="blueBluetooth">#FF5C979E</color>
     <color name="darkBlueBluetooth">#FF305A60</color>
     <color name="transparentBlueBluetooth">#315C979E</color>
-    <color name="greyDisabled">#AAAAAAAA</color>
+    <color name="grayDisabled">#AAAAAAAA</color>
     <color name="whiteEnabled">#FFFFFFFF</color>
 </resources>

@@ -16,7 +16,7 @@ public final class R {
         public static final int darkGreen=0x7f050002;
         public static final int darkRedBluetoothDot=0x7f050003;
         public static final int green=0x7f050004;
-        public static final int greyDisabled=0x7f050005;
+        public static final int grayDisabled =0x7f050005;
         public static final int redBluetoothDot=0x7f050006;
         public static final int transparentBlueBluetooth=0x7f050007;
         public static final int transparentGreen=0x7f050008;
