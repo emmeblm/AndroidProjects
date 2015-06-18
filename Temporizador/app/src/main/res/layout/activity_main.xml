@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="onClickDetener"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.temporizador.MainActivity" >
+
+    <Button
+        android:id="@+id/btniniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="onClickiniciar"
+        android:text="Iniciar" />
+
+    <EditText
+        android:id="@+id/editTextTemporizador"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btniniciar"
+        android:layout_marginBottom="14dp"
+        android:layout_toRightOf="@+id/btniniciar"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextTemporizador"
+        android:layout_toRightOf="@+id/btniniciar"
+        android:text="@string/hello_world" />
+
+    <EditText
+        android:id="@+id/editTextTemporizador2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/editTextTemporizador"
+        android:ems="10"
+        android:onClick="onClickiniciar2" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btniniciar"
+        android:layout_below="@+id/btniniciar"
+        android:layout_marginTop="26dp"
+        android:text="Detener" />
+
+</RelativeLayout>

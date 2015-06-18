@@ -77,6 +77,7 @@ public class NewContactActivity extends Activity {
         if (validateContactDataBeforeSaving(name, phone, email)) {
             Contact contact = new Contact(photo, name, phone, email);
             contact.save();
+
             startActivity(new Intent(this, MainActivity.class));
             finish();
         } else {
